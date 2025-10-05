@@ -1,0 +1,57 @@
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS projeto;
+USE projeto;
+
+-- Tabela de categorias
+CREATE TABLE categorias (
+    id_categoria INT PRIMARY KEY,
+    nome_categoria VARCHAR(20)
+);
+
+-- Tabela de fornecedores
+CREATE TABLE fornecedores (
+    cnpj BIGINT PRIMARY KEY NOT NULL,
+    nome_empresa VARCHAR(100) NOT NULL,
+    categoria INT,
+    FOREIGN KEY (categoria) REFERENCES categorias(id_categoria)
+);
+
+-- Tabela de clientes
+CREATE TABLE clientes (
+    cpf BIGINT PRIMARY KEY NOT NULL,
+    nome_cliente VARCHAR(100) NOT NULL
+);
+
+-- Tabela de docas
+CREATE TABLE docas (
+    id_doca INT PRIMARY KEY,
+    produto INT,
+    FOREIGN KEY (produto) REFERENCES produtos(id_produto)
+);
+
+-- Tabela de produtos
+CREATE TABLE produtos (
+    id_produto INT PRIMARY KEY NOT NULL,
+    nome_produto VARCHAR(100) NOT NULL,
+    validade DATE NOT NULL,
+    lote BIGINT NOT NULL,
+    categoria INT NOT NULL,
+    fornecedor BIGINT NOT NULL,
+    doca INT,
+    valor DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (fornecedor) REFERENCES fornecedores(cnpj),
+    FOREIGN KEY (categoria) REFERENCES categorias(id_categoria),
+    FOREIGN KEY (doca) REFERENCES docas(id_doca)
+);
+
+-- Tabela de vendas
+CREATE TABLE vendas (
+    id_venda INT PRIMARY KEY NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    quantidade INT NOT NULL,
+    produto INT NOT NULL,
+    cliente_cpf BIGINT NULL,
+    data_venda DATE NOT NULL,
+    FOREIGN KEY (produto) REFERENCES produtos(id_produto),
+    FOREIGN KEY (cliente_cpf) REFERENCES clientes(cpf)
+);
