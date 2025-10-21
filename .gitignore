@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambiente virtual
+venv/
+env/
+
+# VSCode
+.vscode/
+
+# Banco de dados local
+*.db
+*.sqlite
+
+# Senhas (IMPORTANTE!)
+.env
