@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docas - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pagina-docas">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <div class="top-right-links">
+                <button id="btn-nova-doca" class="top-right-button">
+                    <span class="icon">+</span>
+                    <span>Nova Doca</span>
+                </button>
+            </div>
+
+            <input type="text" id="pesquisa-doca" placeholder="Pesquisar por Doca, ID Produto ou Nome Produto...">
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Doca</th>
+                        <th>ID Produto</th>
+                        <th>Nome Produto</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-docas">
+                    </tbody>
+            </table>
+        </main>
+    </div>
+
+    <div id="modal-nova-doca" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Nova Doca</h2>
+            <form id="form-nova-doca">
+                <input type="text" id="doca-id-modal" placeholder="ID da Doca (ex: A1, B2)" required>
+                <button type="button" id="btn-add-doca" class="btn-primary">Adicionar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

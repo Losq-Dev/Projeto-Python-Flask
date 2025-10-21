@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body id="pagina-relatorios">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <div class="relatorios-header">
+                <h2 id="data-atual">20 de Outubro de 2025</h2>
+                <input type="date" id="calendario-relatorio">
+            </div>
+
+            <div class="relatorios-container">
+                <div class="chart-container">
+                    <canvas id="grafico-vendas"></canvas>
+                </div>
+
+                <div class="totais-container">
+                    <h3>Total de Vendas:</h3>
+                    <div class="total-item">
+                        <span>Total Dinheiro:</span>
+                        <strong id="total-dinheiro">R$ 0,00</strong>
+                    </div>
+                    <div class="total-item">
+                        <span>Total Cartão:</span>
+                        <strong id="total-cartao">R$ 0,00</strong>
+                    </div>
+                    <div class="total-item">
+                        <span>Total Pix:</span>
+                        <strong id="total-pix">R$ 0,00</strong>
+                    </div>
+                    <div class="total-item total-geral">
+                        <span>Total Geral:</span>
+                        <strong id="total-geral">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vendas-dia-lista">
+                </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pagina-clientes">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <input type="text" id="pesquisa-cliente" placeholder="Pesquisar cliente por CPF ou Nome...">
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-clientes">
+                    </tbody>
+            </table>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

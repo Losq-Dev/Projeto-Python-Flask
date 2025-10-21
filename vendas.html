@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pagina-vendas">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <div class="top-right-links">
+                <button id="btn-novo-cliente" class="top-right-button">
+                    <span class="icon">+</span>
+                    <span>Novo cliente:</span>
+                </button>
+            </div>
+
+            <input type="text" id="pesquisa-produto-venda" class="vendas-pesquisa" placeholder="Pesquisar produto por ID ou Nome...">
+            <div id="autocomplete-lista" class="info-field">
+                </div>
+
+            <div class="vendas-layout">
+                <div class="vendas-esquerda">
+                    <h2>Produtos Selecionados</h2>
+                    <div id="produtos-selecionados-lista">
+                        </div>
+                </div>
+
+                <div class="vendas-direita">
+                    <div class="vendas-finalizar info-field">
+                        <select id="forma-pagamento">
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="cartao">Cartão</option>
+                            <option value="pix">PIX</option>
+                        </select>
+                        <input type="text" id="cliente-cpf" placeholder="CPF do Cliente (Opcional)">
+                        
+                        <h3>Valor Total: <span id="valor-total">R$ 0,00</span></h3>
+                        
+                        <button id="btn-finalizar-venda" class="btn-primary">Finalizar venda:</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-novo-cliente" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Novo Cliente</h2>
+        <form id="form-novo-cliente">
+            <input type="text" id="cliente-cpf-modal" placeholder="CPF" required>
+            <input type="text" id="cliente-nome-modal" placeholder="Nome" required>
+            <input type="tel" id="cliente-telefone-modal" placeholder="Telefone" required>
+            <button type="button" id="btn-add-cliente" class="btn-primary">Adicionar</button>
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pagina-produtos">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <div class="top-right-links">
+                <button id="btn-novo-produto" class="top-right-button">
+                    <span class="icon">+</span>
+                    <span>Novo produto:</span>
+                </button>
+            </div>
+
+            <input type="text" id="pesquisa-produto" placeholder="Pesquisar produtos por ID ou Nome...">
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Valor (R$)</th>
+                        <th>Estoque</th>
+                        <th>Doca</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-produtos">
+                    </tbody>
+            </table>
+        </main>
+    </div>
+
+    <div id="modal-novo-produto" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Novo Produto</h2>
+        <form id="form-novo-produto">
+            <input type="text" id="produto-id" placeholder="ID Produto">
+            <input type="text" id="produto-nome" placeholder="Nome">
+            <input type="number" id="produto-valor" placeholder="Valor (ex: 10.50)" step="0.01">
+            <input type="number" id="produto-qtd" placeholder="Quantidade">
+            <input type="text" id="produto-lote" placeholder="Lote">
+            <input type="date" id="produto-validade" placeholder="Validade">
+            <input type="text" id="produto-categoria" placeholder="ID Categoria">
+            <input type="text" id="produto-fornecedor" placeholder="CNPJ Fornecedor">
+            <input type="text" id="produto-doca" placeholder="ID Doca">
+            <button type="button" id="btn-add-produto" class="btn-primary">Adicionar</button>
+        </form>
+    </div>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

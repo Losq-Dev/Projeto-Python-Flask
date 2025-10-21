@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pagina-categorias">
+    <div class="app-container">
+        <nav class="sidebar">
+            <a href="vendas.html" class="sidebar-item">
+                <div class="icon">V</div>
+                <span>Vendas</span>
+            </a>
+            <a href="produtos.html" class="sidebar-item">
+                <div class="icon">P</div>
+                <span>Produtos</span>
+            </a>
+            <a href="relatorios.html" class="sidebar-item">
+                <div class="icon">R</div>
+                <span>Relatórios</span>
+            </a>
+            <a href="clientes.html" class="sidebar-item">
+                <div class="icon">C</div>
+                <span>Clientes</span>
+            </a>
+            <a href="docas.html" class="sidebar-item">
+                <div class="icon">D</div>
+                <span>Docas</span>
+            </a>
+            <a href="categorias.html" class="sidebar-item">
+                <div class="icon">CT</div>
+                <span>Categorias</span>
+            </a>
+        </nav>
+
+        <main class="main-content">
+            <div class="top-right-links">
+                <button id="btn-nova-categoria" class="top-right-button">
+                    <span class="icon">+</span>
+                    <span>Nova Categoria:</span>
+                </button>
+            </div>
+
+            <input type="text" id="pesquisa-categoria" placeholder="Pesquisar por ID ou Nome da Categoria...">
+
+            <div id="lista-categorias">
+                </div>
+        </main>
+    </div>
+
+    <div id="modal-nova-categoria" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Nova Categoria</h2>
+            <form id="form-nova-categoria">
+                <input type="text" id="categoria-id-modal" placeholder="ID da Categoria" required>
+                <input type="text" id="categoria-nome-modal" placeholder="Nome da Categoria" required>
+                <button type="button" id="btn-add-categoria" class="btn-primary">Adicionar</button>
+            </form> 
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
