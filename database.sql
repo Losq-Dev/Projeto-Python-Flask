@@ -19,14 +19,13 @@ CREATE TABLE fornecedores (
 -- Tabela de clientes
 CREATE TABLE clientes (
     cpf BIGINT PRIMARY KEY NOT NULL,
-    nome_cliente VARCHAR(100) NOT NULL
+    nome_cliente VARCHAR(100) NOT NULL,
+    telefone BIGINT NOT NULL
 );
 
 -- Tabela de docas
 CREATE TABLE docas (
-    id_doca INT PRIMARY KEY,
-    produto INT,
-    FOREIGN KEY (produto) REFERENCES produtos(id_produto)
+    id_doca INT PRIMARY KEY
 );
 
 -- Tabela de produtos
@@ -37,7 +36,8 @@ CREATE TABLE produtos (
     lote BIGINT NOT NULL,
     categoria INT NOT NULL,
     fornecedor BIGINT NOT NULL,
-    doca INT,
+    doca INT NOT NULL,
+    quantidade INT NOT NULL,
     valor DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (fornecedor) REFERENCES fornecedores(cnpj),
     FOREIGN KEY (categoria) REFERENCES categorias(id_categoria),
@@ -46,12 +46,15 @@ CREATE TABLE produtos (
 
 -- Tabela de vendas
 CREATE TABLE vendas (
-    id_venda INT PRIMARY KEY NOT NULL,
+    id_venda INT PRIMARY KEY auto_increment NOT NULL,
     valor DECIMAL(10,2) NOT NULL,
     quantidade INT NOT NULL,
     produto INT NOT NULL,
     cliente_cpf BIGINT NULL,
     data_venda DATE NOT NULL,
+    hora_vanda time NOT NULL
+    forma_pagamento VARCHAR(20),
+    quantidade INT NOT NULL,	
     FOREIGN KEY (produto) REFERENCES produtos(id_produto),
     FOREIGN KEY (cliente_cpf) REFERENCES clientes(cpf)
 );
