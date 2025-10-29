@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .bg { fill: #0f1e33; }             /* deep navy background */
+      .card { fill: #132847; }           /* card/dash container */
+      .accent { fill: #2f8de4; }         /* primary blue */
+      .muted { fill: #7aaee9; }          /* light blue for highlights */
+      .box { fill: #f0c27b; }            /* stock boxes */
+      .box-stroke { stroke: #d7a15d; stroke-width: 6; fill: none; }
+      .line { stroke: #7aaee9; stroke-width: 8; fill: none; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" class="bg"/>
+
+  <!-- Dashboard card -->
+  <g transform="translate(56,56)">
+    <rect x="0" y="0" width="400" height="280" rx="24" class="card"/>
+    <!-- chart bars -->
+    <g transform="translate(40,48)">
+      <rect x="0"   y="120" width="36" height="72" rx="8" class="accent"/>
+      <rect x="56"  y="96"  width="36" height="96" rx="8" class="accent"/>
+      <rect x="112" y="64"  width="36" height="128" rx="8" class="accent"/>
+      <rect x="168" y="28"  width="36" height="164" rx="8" class="accent"/>
+      <!-- sparkline -->
+      <path d="M0,120 L56,96 112,84 168,60 224,52 280,36" class="line"/>
+    </g>
+    <!-- dashboard title dots -->
+    <g transform="translate(24,20)">
+      <circle cx="0" cy="0" r="6" class="muted"/>
+      <circle cx="18" cy="0" r="6" class="muted"/>
+      <circle cx="36" cy="0" r="6" class="muted"/>
+    </g>
+  </g>
+
+  <!-- Stacked boxes (inventory) -->
+  <g transform="translate(300,312)">
+    <!-- pallet -->
+    <rect x="-120" y="120" width="240" height="18" rx="6" fill="#b6792b"/>
+    <rect x="-120" y="104" width="240" height="16" rx="6" fill="#a96e27"/>
+    <!-- boxes -->
+    <g>
+      <rect x="-108" y="56" width="96" height="64" rx="10" class="box"/>
+      <rect x="-108" y="56" width="96" height="64" rx="10" class="box-stroke"/>
+      <rect x="16" y="56" width="96" height="64" rx="10" class="box"/>
+      <rect x="16" y="56" width="96" height="64" rx="10" class="box-stroke"/>
+      <rect x="-46" y="0" width="96" height="64" rx="10" class="box"/>
+      <rect x="-46" y="0" width="96" height="64" rx="10" class="box-stroke"/>
+    </g>
+    <!-- labels on boxes -->
+    <g fill="#ffffff">
+      <rect x="-78" y="72" width="38" height="10" rx="3"/>
+      <rect x="46"  y="72" width="38" height="10" rx="3"/>
+      <rect x="-16" y="16" width="38" height="10" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Caption (hidden at small sizes but good for large) -->
+  <g transform="translate(56,456)">
+    <rect x="0" y="-24" width="400" height="28" rx="12" fill="#0d1a2d"/>
+    <text x="20" y="-6" font-family="Inter, Arial, sans-serif" font-size="20" fill="#7aaee9">
+      Gestão de Estoque
+    </text>
+  </g>
+</svg>
